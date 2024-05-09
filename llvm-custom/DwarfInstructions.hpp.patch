@@ -1,0 +1,11 @@
+--- libunwind/src/DwarfInstructions.hpp	2023-06-10 22:58:16.000000000 +0000
++++ libunwind/src/DwarfInstructions.hpp	2024-05-09 05:49:20.122758345 +0000
+@@ -205,7 +205,7 @@
+       // __unw_step_stage2 is not used for cross unwinding, so we use
+       // __aarch64__ rather than LIBUNWIND_TARGET_AARCH64 to make sure we are
+       // building for AArch64 natively.
+-#if defined(__aarch64__)
++#if defined(__aarch64__) && defined(__mte__)
+       if (stage2 && cieInfo.mteTaggedFrame) {
+         pint_t sp = registers.getSP();
+         pint_t p = sp;

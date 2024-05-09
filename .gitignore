@@ -1,0 +1,5 @@
+a.out
+/lfi-clang
+/llvm-project-*
+/musl-*
+!/musl-custom

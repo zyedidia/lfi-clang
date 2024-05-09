@@ -5,4 +5,5 @@ lfi-compile clang \
     "$@" \
     -fuse-ld=lld \
     -fPIC \
+    -march=armv8-a+lse \
     -Wno-unused-command-line-argument

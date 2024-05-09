@@ -15,9 +15,6 @@ CXX=$2
 
 rm -rf llvm-project-$VERSION.src/build-runtimes
 
-# only for LLVM 17
-# cp DwarfInstructions.hpp ./llvm-project-$VERSION.src/libunwind/src/DwarfInstructions.hpp
-
 # llvm c++ libraries
 cd llvm-project-$VERSION.src/
 mkdir build-runtimes

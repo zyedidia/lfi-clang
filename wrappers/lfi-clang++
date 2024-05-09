@@ -20,4 +20,5 @@ lfi-compile clang++ \
     -lunwind \
     -lc++abi \
     -static-pie \
+    -march=armv8-a+lse \
     -target aarch64-linux-musl

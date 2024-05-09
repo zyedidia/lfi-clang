@@ -22,4 +22,4 @@ fi
 ./build-musl.sh $CC $PREFIX $MUSL_VERSION
 ./build-llvm-runtimes.sh $CC $CXX $PREFIX $LLVM_VERSION
 
-cp -r ../compiler $PREFIX/bin
+cp -r wrappers $PREFIX/bin
