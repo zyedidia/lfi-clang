@@ -11,6 +11,14 @@ The runtime libraries are currently built from LLVM 16.0.6, so your local Clang
 should match this version (ideally), but you can change this version number in
 `install-toolchain.sh`.
 
+To run the build, you must have `lld`, `ninja`, and `cmake` installed.
+Additionally, in order to build `libc++`, you may need to symlink
+`/usr/include/asm-generic` to `/usr/include/asm`.
+
+```
+sudo ln -s /usr/include/asm-generic /usr/include/asm
+```
+
 # Usage
 
 First, you must install `lfi-compile` and `lfi-leg-arm64` from the LFI project.
