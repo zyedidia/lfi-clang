@@ -6,4 +6,5 @@ lfi-compile clang++ \
     -fuse-ld=lld \
     -fPIC \
     -march=armv8-a+lse \
-    -Wno-unused-command-line-argument
+    -Wno-unused-command-line-argument \
+    -target aarch64-linux-musl
