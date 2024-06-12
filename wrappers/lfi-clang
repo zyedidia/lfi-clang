@@ -1,8 +1,7 @@
 #!/bin/bash
 TOOLCHAIN=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/..
 lfi-compile clang \
-    -mllvm --aarch64-enable-compress-jump-tables=false \
-    -ffixed-x18 -ffixed-x21 -ffixed-x22 -ffixed-x25 -ffixed-x30 \
+    -mllvm --reserve-r14 -mllvm --reserve-r15 -mllvm -align-labels=16 \
     "$@" \
     --sysroot $TOOLCHAIN/sysroot \
     --rtlib=compiler-rt \
@@ -10,9 +9,8 @@ lfi-compile clang \
     -nostdlibinc \
     -isystem $TOOLCHAIN/sysroot/include \
     -isystem /usr/include \
-    -isystem /usr/include/aarch64-linux-gnu \
+    -isystem /usr/include/x86_64-linux-gnu \
     -fuse-ld=lld \
     -Wno-unused-command-line-argument \
     -static-pie \
-    -march=armv8-a+lse \
-    -target aarch64-linux-musl
+    -target x86_64-linux-musl
