@@ -5,6 +5,8 @@ set -e
 PREFIX=$1
 mkdir -p $PREFIX
 
+export ARCH=$2 # (aarch64 or x86_64)
+
 LLVM_VERSION=16.0.6
 MUSL_VERSION=1.2.4
 
