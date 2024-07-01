@@ -19,8 +19,8 @@ rm -rf llvm-project-$VERSION.src/build-runtimes
 cd llvm-project-$VERSION.src/
 mkdir build-runtimes
 cd build-runtimes
-export CXXFLAGS="--sysroot $SYSROOT -nostdlib -nostdlibinc -isystem $SYSROOT/include -isystem /usr/include -isystem /usr/include/aarch64-linux-gnu -I../libunwind/include -resource-dir $COMPRT --rtlib=compiler-rt"
-export CFLAGS="--sysroot $SYSROOT -nostdlib -nostdlibinc -isystem $SYSROOT/include -isystem /usr/include -isystem /usr/include/aarch64-linux-gnu -I../libunwind/include -resource-dir $COMPRT --rtlib=compiler-rt"
+export CXXFLAGS="--sysroot $SYSROOT -nostdlib -nostdlibinc -isystem $SYSROOT/include -isystem /usr/include -isystem /usr/include/$ARCH-linux-gnu -I../libunwind/include -resource-dir $COMPRT --rtlib=compiler-rt"
+export CFLAGS="--sysroot $SYSROOT -nostdlib -nostdlibinc -isystem $SYSROOT/include -isystem /usr/include -isystem /usr/include/$ARCH-linux-gnu -I../libunwind/include -resource-dir $COMPRT --rtlib=compiler-rt"
 cmake ../runtimes -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_C_COMPILER=$CC \

@@ -8,6 +8,18 @@ mkdir -p $PREFIX
 LLVM_VERSION=16.0.6
 MUSL_VERSION=1.2.4
 
+mkdir -p $PWD/wrappers
+
+lfi-wrap -compiler=clang -toolchain=nolib-clang > $PWD/wrappers/lfi-nolib-clang
+lfi-wrap -compiler=clang++ -toolchain=nolib-clang > $PWD/wrappers/lfi-nolib-clang++
+chmod +x wrappers/lfi-nolib-clang
+chmod +x wrappers/lfi-nolib-clang++
+
+lfi-wrap -compiler=clang -toolchain=clang > $PWD/wrappers/lfi-clang
+lfi-wrap -compiler=clang++ -toolchain=clang > $PWD/wrappers/lfi-clang++
+chmod +x wrappers/lfi-clang
+chmod +x wrappers/lfi-clang++
+
 CC=$PWD/wrappers/lfi-nolib-clang
 CXX=$PWD/wrappers/lfi-nolib-clang++
 

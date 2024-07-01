@@ -3,3 +3,4 @@ a.out
 /llvm-project-*
 /musl-*
 !/musl-custom
+/wrappers
