@@ -9,6 +9,8 @@ export ARCH=$2 # (aarch64 or x86_64)
 
 LLVM_VERSION=16.0.6
 
+git submodule update --init
+
 mkdir -p $PWD/wrappers
 
 lfi-wrap -compiler=clang -toolchain=nolib-clang > $PWD/wrappers/lfi-nolib-clang
